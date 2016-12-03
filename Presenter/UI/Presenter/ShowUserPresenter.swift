@@ -22,3 +22,21 @@ extension ShowUserPresenter: ShowUserPresenterProtocol {
         view.renderView()
     }
 }
+
+extension ShowUserPresenter: DataProviderPresenterProtocol {
+    func numberOfItemsInSection(_ section: Int) -> Int {
+        return users.count
+    }
+    
+    func configure(item: CellProtocol, at index: Int) {
+        let user = users[index]
+        item.display(age: user.age)
+        item.display(name: user.name)
+    }
+    
+    func objectAtIndexPath(_ index: Int) -> UserViewModel {
+        return users[index]
+    }
+}
+
+

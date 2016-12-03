@@ -1,5 +1,4 @@
 
-
 public protocol BasePresenter {
     func viewDidLoad()
     func viewWillAppear()
