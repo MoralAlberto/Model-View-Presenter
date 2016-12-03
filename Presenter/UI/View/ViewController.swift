@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         view.addSubview(textfield!)
         view.backgroundColor = UIColor.green
         
-        presenter?.viewCreated()
+        presenter?.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {

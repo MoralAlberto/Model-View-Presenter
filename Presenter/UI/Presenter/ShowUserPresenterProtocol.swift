@@ -1,4 +1,4 @@
 
-protocol ShowUserPresenterProtocol {
+protocol ShowUserPresenterProtocol: BasePresenter {
     func presentUsers(users: [UserViewModel])
 }

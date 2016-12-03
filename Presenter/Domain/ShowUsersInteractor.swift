@@ -15,7 +15,5 @@ class ShowUsersInteractor: ShowUsersUseCase {
 
             self.presenter?.presentUsers(users: usersViewModel)
         }
-        
-
     }
 }

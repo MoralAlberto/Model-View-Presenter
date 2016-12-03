@@ -10,13 +10,13 @@ class ShowUserPresenter {
         self.view = view
         self.interactor = interactor
     }
-    
-    func viewCreated() {
-        interactor.showUsers()
-    }
 }
 
 extension ShowUserPresenter: ShowUserPresenterProtocol {
+    func viewDidLoad() {
+        interactor.showUsers()
+    }
+    
     func presentUsers(users: [UserViewModel]) {
         self.users = users
         view.renderView()
