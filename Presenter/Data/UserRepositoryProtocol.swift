@@ -1,4 +1,4 @@
 
-protocol PersistenceUserProtocol {
+protocol UserRepositoryProtocol {
     func fetchUsers() -> [UserData]
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-class PersistenceClient: PersistenceUserProtocol {
+class UserRepository: UserRepositoryProtocol {
     
     func fetchUsers() -> [UserData] {
         let userOne = UserData(firstName: "Alberto", lastName: "Moral", age: 28, addess: "El clot")
