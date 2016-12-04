@@ -1,21 +1,6 @@
 import UIKit
 
-protocol DataSourceDelegate: class {
-    associatedtype Object
-    func cellIdentifierForObject(_ object: Object) -> String
-//    func selectedItem(object: Object)
-}
-
-protocol DataProviderPresenterProtocol {
-    associatedtype View
-    associatedtype Object
-    func objectAtIndexPath(_ index: Int) -> Object
-    func configure(item: View, at index: Int)
-    func numberOfItemsInSection(_ section: Int) -> Int
-}
-
-
-class TableViewDataSource <Delegate: DataSourceDelegate, Data: DataProviderPresenterProtocol, Cell: UITableViewCell>: NSObject, UITableViewDataSource where Delegate.Object == Data.Object, Cell: CellProtocol, Data.View == CellProtocol {
+class TableViewDataSource <Delegate: DataSourceDelegate, Data: DataProviderPresenterProtocol, Cell: UITableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate where Delegate.Object == Data.Object, Cell: CellProtocol, Data.View == CellProtocol {
     
     fileprivate var tableView: UITableView
     fileprivate var dataProvider: Data
@@ -29,7 +14,10 @@ class TableViewDataSource <Delegate: DataSourceDelegate, Data: DataProviderPrese
         super.init()
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
+    
+    //  MARK: TableView DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataProvider.numberOfItemsInSection(0)
@@ -44,5 +32,11 @@ class TableViewDataSource <Delegate: DataSourceDelegate, Data: DataProviderPrese
         }
         dataProvider.configure(item: cell, at: indexPath.row)
         return cell
+    }
+    
+    //  MARK: TableView Delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate.selectedItem(at: indexPath.row)
     }
 }

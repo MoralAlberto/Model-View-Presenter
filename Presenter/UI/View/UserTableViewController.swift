@@ -36,6 +36,10 @@ extension UserTableViewController: DataSourceDelegate {
     func cellIdentifierForObject(_ object: UserViewModel) -> String {
         return String(describing: UserTableViewCell.self)
     }
+    
+    func selectedItem(at row: Int) {
+        presenter?.selectedUser(at: row)
+    }
 }
 
 extension UserTableViewController: ViewProtocol {

@@ -21,6 +21,11 @@ extension ShowUserPresenter: ShowUserPresenterProtocol {
         self.users = users
         view.renderView()
     }
+    
+    func selectedUser(at index: Int) {
+        let user = users[index]
+        print("User \(user.name)")
+    }
 }
 
 extension ShowUserPresenter: DataProviderPresenterProtocol {

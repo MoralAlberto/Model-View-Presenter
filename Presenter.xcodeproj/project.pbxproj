@@ -27,6 +27,8 @@
 		39E1FC1C1DF3353B00FA9785 /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1FC1B1DF3353B00FA9785 /* CellProtocol.swift */; };
 		39E1FC1E1DF3364100FA9785 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1FC1D1DF3364100FA9785 /* UserTableViewCell.swift */; };
 		39E1FC211DF3384D00FA9785 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1FC201DF3384D00FA9785 /* TableViewDataSource.swift */; };
+		39E1FC241DF3498700FA9785 /* DataProviderPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1FC231DF3498700FA9785 /* DataProviderPresenterProtocol.swift */; };
+		39E1FC261DF3499600FA9785 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E1FC251DF3499600FA9785 /* DataSourceDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		39E1FC1B1DF3353B00FA9785 /* CellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
 		39E1FC1D1DF3364100FA9785 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		39E1FC201DF3384D00FA9785 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		39E1FC231DF3498700FA9785 /* DataProviderPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderPresenterProtocol.swift; sourceTree = "<group>"; };
+		39E1FC251DF3499600FA9785 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,8 +220,18 @@
 			isa = PBXGroup;
 			children = (
 				39E1FC201DF3384D00FA9785 /* TableViewDataSource.swift */,
+				39E1FC221DF3496800FA9785 /* Protocols */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		39E1FC221DF3496800FA9785 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				39E1FC231DF3498700FA9785 /* DataProviderPresenterProtocol.swift */,
+				39E1FC251DF3499600FA9785 /* DataSourceDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,11 +376,13 @@
 				39E1FC1E1DF3364100FA9785 /* UserTableViewCell.swift in Sources */,
 				396C26411DF0BAB300AD390D /* AppDelegate.swift in Sources */,
 				396C267A1DF0BC2600AD390D /* PersistenceUserProtocol.swift in Sources */,
+				39E1FC241DF3498700FA9785 /* DataProviderPresenterProtocol.swift in Sources */,
 				396C267C1DF0BCF700AD390D /* ShowUsersInteractor.swift in Sources */,
 				39E1FC211DF3384D00FA9785 /* TableViewDataSource.swift in Sources */,
 				396C268E1DF0C03700AD390D /* ShowUserPresenter.swift in Sources */,
 				396C268F1DF0C03700AD390D /* ShowUserPresenterProtocol.swift in Sources */,
 				396C26761DF0BB8400AD390D /* PersistenceClient.swift in Sources */,
+				39E1FC261DF3499600FA9785 /* DataSourceDelegate.swift in Sources */,
 				396C26781DF0BBE500AD390D /* UserData.swift in Sources */,
 				396C26901DF0C03700AD390D /* UserViewModel.swift in Sources */,
 				39E1FC1C1DF3353B00FA9785 /* CellProtocol.swift in Sources */,
