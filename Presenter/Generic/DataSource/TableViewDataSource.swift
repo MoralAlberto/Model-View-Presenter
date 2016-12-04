@@ -1,6 +1,6 @@
 import UIKit
 
-class TableViewDataSource <Delegate: DataSourceDelegate, Data: DataProviderPresenterProtocol, Cell: UITableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate where Delegate.Object == Data.Object, Cell: CellProtocol, Data.View == CellProtocol {
+class TableViewDataSource <Delegate: DataSourceDelegate, Data: DataProviderProtocol, Cell: UITableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate where Delegate.Object == Data.Object, Cell: BaseCellProtocol, Data.View == BaseCellProtocol {
     
     fileprivate var tableView: UITableView
     fileprivate var dataProvider: Data

@@ -1,6 +1,6 @@
 
 
-protocol DataProviderPresenterProtocol {
+protocol DataProviderProtocol {
     associatedtype View
     associatedtype Object
     func objectAtIndexPath(_ index: Int) -> Object
