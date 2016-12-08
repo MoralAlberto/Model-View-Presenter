@@ -3,10 +3,10 @@ import Foundation
 class ShowUserPresenter {
     
     var users = [UserViewModel]()
-    let interactor: ShowUsersUseCase
+    let interactor: GetUsersUseCase
     fileprivate let view: ViewProtocol
     
-    init(view: ViewProtocol, interactor: ShowUsersUseCase = ShowUsersInteractor()) {
+    init(view: ViewProtocol, interactor: GetUsersUseCase = ShowUsersInteractor()) {
         self.view = view
         self.interactor = interactor
     }
@@ -14,11 +14,35 @@ class ShowUserPresenter {
 
 extension ShowUserPresenter: ShowUserPresenterProtocol {
     func viewDidLoad() {
-        interactor.showUsers()
+        interactor.getUsers()
     }
     
     func presentUsers(users: [UserViewModel]) {
         self.users = users
         view.renderView()
     }
+    
+    func selectedUser(at index: Int) {
+        let user = users[index]
+        print("User \(user.name)")
+    }
 }
+
+extension ShowUserPresenter: DataProviderProtocol {
+    func numberOfItemsInSection(_ section: Int) -> Int {
+        return users.count
+    }
+    
+    func configure(item: BaseCellProtocol, at index: Int) {
+        let user = users[index]
+        let convertItem = item as? CellProtocol
+        convertItem?.display(age: user.age)
+        convertItem?.display(name: user.name)
+    }
+    
+    func objectAtIndexPath(_ index: Int) -> UserViewModel {
+        return users[index]
+    }
+}
+
+

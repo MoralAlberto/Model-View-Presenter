@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func createRootViewController() -> UIViewController {
-        let view = ViewController()
+        let view = UserTableViewController(style: .plain)
         let useCase = ShowUsersInteractor()
         
         let presenter = ShowUserPresenter(view: view, interactor: useCase)
