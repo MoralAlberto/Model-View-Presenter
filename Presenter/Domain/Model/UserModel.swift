@@ -5,7 +5,6 @@ struct UserModel {
     let age: Int
 }
 
-
 extension UserModel {
     init(userData: UserData) {
         self.name = userData.firstName + " " + userData.lastName

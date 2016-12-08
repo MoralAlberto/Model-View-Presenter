@@ -1,6 +1,6 @@
 import Foundation
 
-class ShowUsersInteractor: ShowUsersUseCase {
+class ShowUsersInteractor: GetUsersUseCase {
     private let repository: UserRepositoryProtocol
     var presenter: ShowUserPresenterProtocol?
     
@@ -8,12 +8,10 @@ class ShowUsersInteractor: ShowUsersUseCase {
         self.repository = repository
     }
     
-    func showUsers() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let users = self.repository.fetchUsers()
-            let usersModel = users.map { UserModel.init(userData: $0) }
+    func getUsers() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            let usersModel = self.repository.fetchUsers()
             let usersViewModel = usersModel.map { UserViewModel.init(userModel: $0) }
-
             self.presenter?.presentUsers(users: usersViewModel)
         }
     }

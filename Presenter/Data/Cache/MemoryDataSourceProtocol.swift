@@ -1,4 +1,4 @@
 
-protocol UserRepositoryProtocol {
+protocol MemoryDataSourceProtocol {
     func fetchUsers() -> [UserData]
 }
