@@ -1,0 +1,4 @@
+
+protocol GetUsersByNameUseCase {
+    func getUsersByName()
+}

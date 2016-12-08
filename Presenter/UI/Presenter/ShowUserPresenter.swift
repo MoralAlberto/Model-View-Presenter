@@ -3,10 +3,10 @@ import Foundation
 class ShowUserPresenter {
     
     var users = [UserViewModel]()
-    let interactor: ShowUsersUseCase
+    let interactor: GetUsersUseCase
     fileprivate let view: ViewProtocol
     
-    init(view: ViewProtocol, interactor: ShowUsersUseCase = ShowUsersInteractor()) {
+    init(view: ViewProtocol, interactor: GetUsersUseCase = ShowUsersInteractor()) {
         self.view = view
         self.interactor = interactor
     }
@@ -14,7 +14,7 @@ class ShowUserPresenter {
 
 extension ShowUserPresenter: ShowUserPresenterProtocol {
     func viewDidLoad() {
-        interactor.showUsers()
+        interactor.getUsers()
     }
     
     func presentUsers(users: [UserViewModel]) {

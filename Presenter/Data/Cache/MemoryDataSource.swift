@@ -1,7 +1,6 @@
 import Foundation
 
-class PersistenceClient: PersistenceUserProtocol {
-    
+class MemoryDataSource: MemoryDataSourceProtocol {
     func fetchUsers() -> [UserData] {
         let userOne = UserData(firstName: "Alberto", lastName: "Moral", age: 28, addess: "El clot")
         let userTwo = UserData(firstName: "Daniel", lastName: "Gómez", age: 20, addess: "Maragall")

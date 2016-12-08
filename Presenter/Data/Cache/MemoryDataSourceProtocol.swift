@@ -1,4 +1,4 @@
 
-protocol PersistenceUserProtocol {
+protocol MemoryDataSourceProtocol {
     func fetchUsers() -> [UserData]
 }

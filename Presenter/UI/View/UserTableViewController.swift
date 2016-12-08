@@ -24,7 +24,7 @@ class UserTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: "UserTableViewCell")
+        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: String(describing: UserTableViewCell.self))
         
         tableViewDataSource = TableViewDataSource(tableView: tableView, dataProvider: presenter!, delegate: self)
         
